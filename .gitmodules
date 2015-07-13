@@ -22,3 +22,6 @@
 [submodule "plugins/Multilanguage"]
 	path = plugins/Multilanguage
 	url = https://github.com/patrickmj/Multilanguage.git
+[submodule "plugins/CsvImport"]
+	path = plugins/CsvImport
+	url = https://github.com/omeka/plugin-CsvImport.git
