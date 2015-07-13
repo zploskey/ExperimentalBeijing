@@ -25,3 +25,6 @@
 [submodule "plugins/CsvImport"]
 	path = plugins/CsvImport
 	url = https://github.com/omeka/plugin-CsvImport.git
+[submodule "plugins/ItemRelations"]
+	path = plugins/ItemRelations
+	url = https://github.com/omeka/plugin-ItemRelations.git
