@@ -16,3 +16,6 @@
 [submodule "themes/berlin"]
 	path = themes/berlin
 	url = git://github.com/omeka/theme-berlin.git
+[submodule "plugins/Dropbox"]
+	path = plugins/Dropbox
+	url = https://github.com/omeka/plugin-Dropbox.git
