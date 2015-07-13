@@ -19,3 +19,6 @@
 [submodule "plugins/Dropbox"]
 	path = plugins/Dropbox
 	url = https://github.com/omeka/plugin-Dropbox.git
+[submodule "plugins/Multilanguage"]
+	path = plugins/Multilanguage
+	url = https://github.com/patrickmj/Multilanguage.git
