@@ -28,3 +28,6 @@
 [submodule "plugins/ItemRelations"]
 	path = plugins/ItemRelations
 	url = https://github.com/omeka/plugin-ItemRelations.git
+[submodule "plugins/SimpleVocab"]
+	path = plugins/SimpleVocab
+	url = https://github.com/omeka/plugin-SimpleVocab.git
