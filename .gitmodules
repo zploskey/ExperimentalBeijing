@@ -31,3 +31,6 @@
 [submodule "plugins/SimpleVocab"]
 	path = plugins/SimpleVocab
 	url = https://github.com/omeka/plugin-SimpleVocab.git
+[submodule "plugins/ElementTypes"]
+	path = plugins/ElementTypes
+	url = https://github.com/biblibre/omeka-plugin-ElementTypes.git
