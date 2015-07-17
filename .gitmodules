@@ -15,52 +15,52 @@
 	url = git://github.com/omeka/plugin-Coins
 [submodule "themes/berlin"]
 	path = themes/berlin
-	url = git://github.com/omeka/theme-berlin.git
+	url = git://github.com/omeka/theme-berlin
 [submodule "plugins/Dropbox"]
 	path = plugins/Dropbox
-	url = https://github.com/omeka/plugin-Dropbox.git
+	url = git://github.com/omeka/plugin-Dropbox
 [submodule "plugins/Multilanguage"]
 	path = plugins/Multilanguage
-	url = https://github.com/patrickmj/Multilanguage.git
+	url = git://github.com/patrickmj/Multilanguage
 [submodule "plugins/CsvImport"]
 	path = plugins/CsvImport
-	url = https://github.com/omeka/plugin-CsvImport.git
+	url = git://github.com/omeka/plugin-CsvImport
 [submodule "plugins/ItemRelations"]
 	path = plugins/ItemRelations
-	url = https://github.com/omeka/plugin-ItemRelations.git
+	url = git://github.com/omeka/plugin-ItemRelations
 [submodule "plugins/SimpleVocab"]
 	path = plugins/SimpleVocab
-	url = https://github.com/omeka/plugin-SimpleVocab.git
+	url = git://github.com/omeka/plugin-SimpleVocab
 [submodule "plugins/ElementTypes"]
 	path = plugins/ElementTypes
-	url = https://github.com/biblibre/omeka-plugin-ElementTypes.git
+	url = git://github.com/biblibre/omeka-plugin-ElementTypes
 [submodule "themes/astrolabe"]
 	path = themes/astrolabe
-	url = https://github.com/scholarslab/astrolabe.git
+	url = git://github.com/scholarslab/astrolabe
 [submodule "themes/avantgarde"]
 	path = themes/avantgarde
-	url = https://github.com/Edward-M/Omeka-Avantgarde.git
+	url = git://github.com/Edward-M/Omeka-Avantgarde
 [submodule "themes/emiglio"]
 	path = themes/emiglio
-	url = https://github.com/omeka/theme-emiglio.git
+	url = git://github.com/omeka/theme-emiglio
 [submodule "themes/minimalist"]
 	path = themes/minimalist
-	url = https://github.com/omeka/theme-minimalist.git
+	url = git://github.com/omeka/theme-minimalist
 [submodule "themes/neatscape"]
 	path = themes/neatscape
-	url = https://github.com/scholarslab/neatscape.git
+	url = git://github.com/scholarslab/neatscape
 [submodule "themes/foundation"]
 	path = themes/foundation
-	url = https://github.com/katel/omeka-foundation.git
+	url = git://github.com/katel/omeka-foundation
 [submodule "themes/rhythm"]
 	path = themes/rhythm
-	url = https://github.com/omeka/theme-rhythm.git
+	url = git://github.com/omeka/theme-rhythm
 [submodule "themes/santa-fe"]
 	path = themes/santa-fe
-	url = https://github.com/omeka/theme-santa-fe.git
+	url = git://github.com/omeka/theme-santa-fe
 [submodule "plugins/DublinCoreExtended"]
 	path = plugins/DublinCoreExtended
-	url = https://github.com/omeka/plugin-DublinCoreExtended.git
+	url = git://github.com/omeka/plugin-DublinCoreExtended
 [submodule "themes/experimental-beijing"]
 	path = themes/experimental-beijing
 	url = git://github.com/zploskey/omeka-theme-experimental-beijing
