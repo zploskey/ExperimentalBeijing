@@ -64,3 +64,6 @@
 [submodule "themes/experimental-beijing"]
 	path = themes/experimental-beijing
 	url = git://github.com/zploskey/omeka-theme-experimental-beijing
+[submodule "plugins/ExperimentalBeijing"]
+	path = plugins/ExperimentalBeijing
+	url = git://github.com/zploskey/plugin-ExperimentalBeijing
