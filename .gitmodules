@@ -61,3 +61,6 @@
 [submodule "plugins/DublinCoreExtended"]
 	path = plugins/DublinCoreExtended
 	url = https://github.com/omeka/plugin-DublinCoreExtended.git
+[submodule "themes/experimental-beijing"]
+	path = themes/experimental-beijing
+	url = git://github.com/zploskey/omeka-theme-experimental-beijing
