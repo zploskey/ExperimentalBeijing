@@ -1,69 +1,69 @@
 [submodule "plugins/ExhibitBuilder"]
 	path = plugins/ExhibitBuilder
-	url = git://github.com/omeka/plugin-ExhibitBuilder
+	url = git@github.com:omeka/plugin-ExhibitBuilder
 [submodule "plugins/SimplePages"]
 	path = plugins/SimplePages
-	url = git://github.com/omeka/plugin-SimplePages
+	url = git@github.com:omeka/plugin-SimplePages
 [submodule "themes/default"]
 	path = themes/default
-	url = git://github.com/omeka/theme-thanksroy
+	url = git@github.com:omeka/theme-thanksroy
 [submodule "themes/seasons"]
 	path = themes/seasons
-	url = git://github.com/omeka/theme-seasons
+	url = git@github.com:omeka/theme-seasons
 [submodule "plugins/Coins"]
 	path = plugins/Coins
-	url = git://github.com/omeka/plugin-Coins
+	url = git@github.com:omeka/plugin-Coins
 [submodule "themes/berlin"]
 	path = themes/berlin
-	url = git://github.com/omeka/theme-berlin
+	url = git@github.com:omeka/theme-berlin
 [submodule "plugins/Dropbox"]
 	path = plugins/Dropbox
-	url = git://github.com/omeka/plugin-Dropbox
+	url = git@github.com:omeka/plugin-Dropbox
 [submodule "plugins/Multilanguage"]
 	path = plugins/Multilanguage
-	url = git://github.com/patrickmj/Multilanguage
+	url = git@github.com:patrickmj/Multilanguage
 [submodule "plugins/CsvImport"]
 	path = plugins/CsvImport
-	url = git://github.com/omeka/plugin-CsvImport
+	url = git@github.com:omeka/plugin-CsvImport
 [submodule "plugins/ItemRelations"]
 	path = plugins/ItemRelations
-	url = git://github.com/omeka/plugin-ItemRelations
+	url = git@github.com:omeka/plugin-ItemRelations
 [submodule "plugins/SimpleVocab"]
 	path = plugins/SimpleVocab
-	url = git://github.com/omeka/plugin-SimpleVocab
+	url = git@github.com:omeka/plugin-SimpleVocab
 [submodule "plugins/ElementTypes"]
 	path = plugins/ElementTypes
-	url = git://github.com/biblibre/omeka-plugin-ElementTypes
+	url = git@github.com:biblibre/omeka-plugin-ElementTypes
 [submodule "themes/astrolabe"]
 	path = themes/astrolabe
-	url = git://github.com/scholarslab/astrolabe
+	url = git@github.com:scholarslab/astrolabe
 [submodule "themes/avantgarde"]
 	path = themes/avantgarde
-	url = git://github.com/Edward-M/Omeka-Avantgarde
+	url = git@github.com:Edward-M/Omeka-Avantgarde
 [submodule "themes/emiglio"]
 	path = themes/emiglio
-	url = git://github.com/omeka/theme-emiglio
+	url = git@github.com:omeka/theme-emiglio
 [submodule "themes/minimalist"]
 	path = themes/minimalist
-	url = git://github.com/omeka/theme-minimalist
+	url = git@github.com:omeka/theme-minimalist
 [submodule "themes/neatscape"]
 	path = themes/neatscape
-	url = git://github.com/scholarslab/neatscape
+	url = git@github.com:scholarslab/neatscape
 [submodule "themes/foundation"]
 	path = themes/foundation
-	url = git://github.com/katel/omeka-foundation
+	url = git@github.com:katel/omeka-foundation
 [submodule "themes/rhythm"]
 	path = themes/rhythm
-	url = git://github.com/omeka/theme-rhythm
+	url = git@github.com:omeka/theme-rhythm
 [submodule "themes/santa-fe"]
 	path = themes/santa-fe
-	url = git://github.com/omeka/theme-santa-fe
+	url = git@github.com:omeka/theme-santa-fe
 [submodule "plugins/DublinCoreExtended"]
 	path = plugins/DublinCoreExtended
-	url = git://github.com/omeka/plugin-DublinCoreExtended
+	url = git@github.com:omeka/plugin-DublinCoreExtended
 [submodule "themes/experimental-beijing"]
 	path = themes/experimental-beijing
-	url = git://github.com/zploskey/omeka-theme-experimental-beijing
+	url = git@github.com:zploskey/omeka-theme-experimental-beijing
 [submodule "plugins/ExperimentalBeijing"]
 	path = plugins/ExperimentalBeijing
-	url = git://github.com/zploskey/plugin-ExperimentalBeijing
+	url = git@github.com:zploskey/plugin-ExperimentalBeijing
