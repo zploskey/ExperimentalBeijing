@@ -67,3 +67,6 @@
 [submodule "plugins/ExperimentalBeijing"]
 	path = plugins/ExperimentalBeijing
 	url = git@github.com:zploskey/plugin-ExperimentalBeijing
+[submodule "plugins/ShortcodeCarousel"]
+	path = plugins/ShortcodeCarousel
+	url = https://github.com/omeka/plugin-ShortcodeCarousel.git
