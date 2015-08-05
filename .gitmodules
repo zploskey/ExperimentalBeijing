@@ -34,30 +34,12 @@
 [submodule "plugins/ElementTypes"]
 	path = plugins/ElementTypes
 	url = https://github.com/biblibre/omeka-plugin-ElementTypes.git
-[submodule "themes/astrolabe"]
-	path = themes/astrolabe
-	url = https://github.com/scholarslab/astrolabe.git
-[submodule "themes/avantgarde"]
-	path = themes/avantgarde
-	url = https://github.com/Edward-M/Omeka-Avantgarde.git
-[submodule "themes/emiglio"]
-	path = themes/emiglio
-	url = https://github.com/omeka/theme-emiglio.git
 [submodule "themes/minimalist"]
 	path = themes/minimalist
 	url = https://github.com/omeka/theme-minimalist.git
 [submodule "themes/neatscape"]
 	path = themes/neatscape
 	url = https://github.com/scholarslab/neatscape.git
-[submodule "themes/foundation"]
-	path = themes/foundation
-	url = https://github.com/katel/omeka-foundation.git
-[submodule "themes/rhythm"]
-	path = themes/rhythm
-	url = https://github.com/omeka/theme-rhythm.git
-[submodule "themes/santa-fe"]
-	path = themes/santa-fe
-	url = https://github.com/omeka/theme-santa-fe.git
 [submodule "plugins/DublinCoreExtended"]
 	path = plugins/DublinCoreExtended
 	url = https://github.com/omeka/plugin-DublinCoreExtended.git
