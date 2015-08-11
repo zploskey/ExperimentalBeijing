@@ -52,3 +52,6 @@
 [submodule "plugins/ShortcodeCarousel"]
 	path = plugins/ShortcodeCarousel
 	url = https://github.com/omeka/plugin-ShortcodeCarousel.git
+[submodule "plugins/GuestUser"]
+	path = plugins/GuestUser
+	url = git://github.com/omeka/plugin-GuestUser.git
