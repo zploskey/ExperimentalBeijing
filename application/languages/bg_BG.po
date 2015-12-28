@@ -11,7 +11,7 @@ msgstr ""
 "POT-Creation-Date: 2012-11-26 14:33-0500\n"
 "PO-Revision-Date: 2015-02-26 08:51+0000\n"
 "Last-Translator: Gabriel Radev <gabosss@gmail.com>\n"
-"Language-Team: Bulgarian (Bulgaria) (http://www.transifex.com/projects/p/omeka/language/bg_BG/)\n"
+"Language-Team: Bulgarian (Bulgaria) (http://www.transifex.com/omeka/omeka/language/bg_BG/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -1564,7 +1564,7 @@ msgid "Enable API"
 msgstr "Включване на API"
 
 #: admin/themes/default/settings/edit-api.php:15
-msgid "Enable or disable the API by checking or uncheking the box below."
+msgid "Enable or disable the API by checking or unchecking the box below."
 msgstr "Включване или изключване на API чрез маркиране или размаркиране на квадратчето"
 
 #: admin/themes/default/settings/edit-api.php:22

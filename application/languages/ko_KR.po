@@ -14,7 +14,7 @@ msgstr ""
 "POT-Creation-Date: 2012-11-26 14:33-0500\n"
 "PO-Revision-Date: 2015-02-24 17:00+0000\n"
 "Last-Translator: John Flatness <john@zerocrates.org>\n"
-"Language-Team: Korean (Korea) (http://www.transifex.com/projects/p/omeka/language/ko_KR/)\n"
+"Language-Team: Korean (Korea) (http://www.transifex.com/omeka/omeka/language/ko_KR/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -1567,7 +1567,7 @@ msgid "Enable API"
 msgstr "API 실행"
 
 #: admin/themes/default/settings/edit-api.php:15
-msgid "Enable or disable the API by checking or uncheking the box below."
+msgid "Enable or disable the API by checking or unchecking the box below."
 msgstr "아래의 박스가 체크되었으면 API가 실행되고, 체크되어있지 않으면 API가 실행되지 않습니다."
 
 #: admin/themes/default/settings/edit-api.php:22
