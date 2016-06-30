@@ -31,38 +31,32 @@ class Omeka_View_Helper_FileMarkup extends Zend_View_Helper_Abstract
      * @var array
      */
     static protected $_callbacks = array(
-        'audio/ogg'         => 'ogg',
-        'audio/x-ogg'       => 'ogg',
-        'audio/aac'         => 'aac',
-        'audio/x-aac'       => 'aac',
-        'audio/aiff'        => 'aiff',
-        'audio/x-aiff'      => 'aiff',
-        'audio/midi'        => 'midi',
-        'audio/x-midi'      => 'midi',
-        'audio/mp3'         => 'mp3',
-        'audio/mpeg'        => 'mp3',
-        'audio/mpeg3'       => 'mp3',
-        'audio/mpegaudio'   => 'mp3',
-        'audio/mpg'         => 'mp3',
-        'audio/x-mp3'       => 'mp3',
-        'audio/x-mpeg'      => 'mp3',
-        'audio/x-mpeg3'     => 'mp3',
-        'audio/x-mpegaudio' => 'mp3',
-        'audio/x-mpg'       => 'mp3',
-        'audio/mp4'         => 'mp4',
-        'audio/x-mp4'       => 'mp4',
-        'audio/wav'         => 'wav',
-        'audio/x-wav'       => 'wav',
-        'video/mp4'         => 'mov',
-        'video/mpeg'        => 'mov',
-        'video/ogg'         => 'mov',
-        'video/quicktime'   => 'mov',
-        'audio/wma'         => 'wma',
-        'audio/x-ms-wma'    => 'wma',
-        'video/avi'         => 'wmv',
-        'video/msvideo'     => 'wmv',
-        'video/x-msvideo'   => 'wmv',
-        'video/x-ms-wmv'    => 'wmv', 
+        'audio/ogg'         => 'audio',
+        'audio/x-ogg'       => 'audio',
+        'audio/aac'         => 'audio',
+        'audio/x-aac'       => 'audio',
+        'audio/aiff'        => 'audio',
+        'audio/x-aiff'      => 'audio',
+        'audio/mp3'         => 'audio',
+        'audio/mpeg'        => 'audio',
+        'audio/mpeg3'       => 'audio',
+        'audio/mpegaudio'   => 'audio',
+        'audio/mpg'         => 'audio',
+        'audio/x-mp3'       => 'audio',
+        'audio/x-mpeg'      => 'audio',
+        'audio/x-mpeg3'     => 'audio',
+        'audio/x-mpegaudio' => 'audio',
+        'audio/x-mpg'       => 'audio',
+        'audio/mp4'         => 'audio',
+        'audio/x-mp4'       => 'audio',
+        'audio/x-m4a'       => 'audio',
+        'audio/wav'         => 'audio',
+        'audio/x-wav'       => 'audio',
+        'video/mp4'         => 'video',
+        'video/x-m4v'       => 'video',
+        'video/ogg'         => 'video',
+        'video/webm'        => 'video',
+        'video/quicktime'   => 'video',
     );
     
     /**
@@ -74,52 +68,41 @@ class Omeka_View_Helper_FileMarkup extends Zend_View_Helper_Abstract
      */
     static private $_fileExtensionCallbacks = array(
         // application/ogg
-        'ogx' => 'ogg', 
+        'ogx' => 'audio',
         // audio/x-aac
-        'aac' => 'aac', 
+        'aac' => 'audio',
         // audio/x-aiff
-        'aif' => 'aiff', 
-        'aiff' => 'aiff', 
-        'aifc' => 'aiff', 
-        // audio/midi
-        'mid' => 'midi', 
-        'midi' => 'midi', 
-        'kar' => 'midi', 
-        'rmi' => 'midi', 
+        'aif' => 'audio',
+        'aiff' => 'audio',
+        'aifc' => 'audio',
         // audio/mpeg
-        'mpga' => 'mp3', 
-        'mp2' => 'mp3', 
-        'mp2a' => 'mp3', 
-        'mp3' => 'mp3', 
-        'm2a' => 'mp3', 
-        'm3a' => 'mp3', 
+        'mpga' => 'audio',
+        'mp2' => 'audio',
+        'mp2a' => 'audio',
+        'mp3' => 'audio',
+        'm2a' => 'audio',
+        'm3a' => 'audio',
         // audio/mp4
-        'mp4a' => 'mp4', 
+        'mp4a' => 'audio',
+        'm4a' => 'audio',
         // audio/ogg
-        'oga' => 'ogg', 
-        'ogg' => 'ogg', 
-        'spx' => 'ogg', 
+        'oga' => 'audio',
+        'ogg' => 'audio',
+        'spx' => 'audio',
+        'opus' => 'audio',
         // audio/x-wav
-        'wav' => 'wav',
+        'wav' => 'audio',
         // video/mp4
-        'mp4' => 'mov', 
-        'mp4v' => 'mov',  
-        'mpg4'  => 'mov', 
-        // video/mpeg
-        'mpeg' => 'mov', 
-        'mpg' => 'mov', 
-        'mpe' => 'mov', 
-        'm1v' => 'mov', 
-        'm2v'  => 'mov', 
+        'mp4' => 'video',
+        'mp4v' => 'video',
+        'mpg4'  => 'video',
+        'm4v' => 'video',
         // video/ogg
-        'ogv' => 'mov', 
+        'ogv' => 'video',
+        // video/webm
+        'webm' => 'video',
         // video/quicktime
-        'qt' => 'mov', 
-        'mov' => 'mov', 
-        // audio/x-ms-wma
-        'wma' => 'wma', 
-        // video/x-msvideo
-        'avi' => 'wmv', 
+        'mov' => 'video',
     );
     
     /**
@@ -140,80 +123,20 @@ class Omeka_View_Helper_FileMarkup extends Zend_View_Helper_Abstract
             'linkToMetadata'=>false,
             'imgAttributes' => array()
             ),
-        'wmv'=>array(
-            'width' => '320',
-            'height' => '240', 
-            'autostart' => 0,
-            'ShowControls'=> 1,
-            'ShowDisplay'=> 0,
-            'ShowStatusBar' => 0,
-            'scale' => 'aspect'
-            ),
-        'wma'=>array(
-            'width' => '320',
-            'height' => '46',
-            'autostart' => 0,
-            'ShowControls'=> 1,
-            'ShowDisplay'=> 0,
-            'ShowStatusBar' => 0
-            ),
-        'mov'=>array(
+        'video'=>array(
             'width' => '320',
             'height' => '240',
             'autoplay' => false,
             'controller'=> true,
             'loop'=> false,
-            'scale' => 'aspect'
             ),
-        'ogg'=>array(
+        'audio' => array(
             'width' => '200',
             'height' => '20',
             'autoplay' => false,
             'controller' => true,
             'loop' => false
-            ),
-        'mp3'=>array(
-            'width' => '200',
-            'height' => '20',
-            'autoplay' => false,
-            'controller' => true,
-            'loop' => false
-            ),
-        'aac'=>array(
-            'width' => '200',
-            'height' => '20',
-            'autoplay' => false,
-            'controller' => true,
-            'loop' => false
-            ),
-        'aiff'=>array(
-            'width' => '200',
-            'height' => '20',
-            'autoplay' => false,
-            'controller' => true,
-            'loop' => false
-            ),
-        'midi'=>array(
-            'width' => '200',
-            'height' => '20',
-            'autoplay' => false,
-            'controller' => true,
-            'loop' => false
-            ),
-        'mp4'=>array(
-            'width' => '200',
-            'height' => '20',
-            'autoplay' => false,
-            'controller' => true,
-            'loop' => false
-            ),
-        'wav'=>array(
-            'width' => '200',
-            'height' => '20',
-            'autoplay' => false,
-            'controller' => true,
-            'loop' => false
-            ),
+        ),
         'icon'=>array(
             'showFilename' => true,
             'icons' => array(),
@@ -354,10 +277,11 @@ class Omeka_View_Helper_FileMarkup extends Zend_View_Helper_Abstract
      */
     public function defaultDisplay($file, array $options=array())
     {
+        $html = null;
         if ($options['linkText']) {
             $html = $options['linkText'];
         }
-        return $this->_linkToFile($file, $options);
+        return $this->_linkToFile($file, $options, $html);
     }
         
     /**
@@ -414,56 +338,6 @@ class Omeka_View_Helper_FileMarkup extends Zend_View_Helper_Abstract
     }
         
     /**
-     * Retrieve valid XHTML for displaying a wmv video file or equivalent.  
-     * Currently this loads the video inside of an <object> tag, but that 
-     * provides less flexibility than a flash wrapper, which seems to be a 
-     * standard Web2.0 practice for video sharing.  This limitation can be
-     * overcome by a plugin that used a flash wrapper for displaying video.
-     * 
-     * @param File $file
-     * @param array $options
-     * @return string
-     */ 
-    public function wmv($file, array $options=array())
-    {
-        $path = html_escape($file->getWebPath('original'));
-        $html = '<object type="application/x-mplayer2" width="'.$options['width'].'" height="'.$options['height'].'" data="'.$path.'" autoStart="'.$options['autostart'].'">'
-              . '<param name="FileName" value="'.$path.'" />'
-              . '<param name="autoStart" value="'.($options['autostart'] ? 'true' : 'false').'" />'
-              . '<param name="ShowAudioControls" value="'.($options['ShowControls'] ? 'true' : 'false').'" />'
-              . '<param name="ShowStatusBar" value="'.($options['ShowStatusBar'] ? 'true' : 'false').'" />'
-              . '<param name="ShowDisplay" value="'.($options['ShowDisplay'] ? 'true' : 'false').'" />'
-              // This param is for QuickTime clients
-              . '<param name="scale" value="' . $options['scale'] . '" />'
-              . '</object>';
-        return $html;
-    }
-    
-    /**
-     * Retrieve valid XHTML for displaying a wma audio file or equivalent.  
-     * Currently this loads the video inside of an <object> tag, but that
-     * provides less flexibility than a flash wrapper, which seems to be a 
-     * standard Web2.0 practice for video sharing.  This limitation can be
-     * overcome by a plugin that used a flash wrapper for displaying video.
-     * 
-     * @param File $file
-     * @param array $options
-     * @return string
-     */ 
-    public function wma($file, array $options=array())
-    {
-        $path = html_escape($file->getWebPath('original'));
-        $html = '<object type="audio/x-ms-wma" width="'.$options['width'].'" height="'.$options['height'].'" data="'.$path.'" autoStart="'.$options['autostart'].'">'
-              . '<param name="FileName" value="'.$path.'" />'
-              . '<param name="autoStart" value="'.($options['autostart'] ? 'true' : 'false').'" />'
-              . '<param name="ShowControls" value="'.($options['ShowControls'] ? 'true' : 'false').'" />'
-              . '<param name="ShowStatusBar" value="'.($options['ShowStatusBar'] ? 'true' : 'false').'" />'
-              . '<param name="ShowDisplay" value="'.($options['ShowDisplay'] ? 'true' : 'false').'" />'
-              . '</object>';
-        return $html;
-    }
-    
-    /**
      * Retrieve valid XHTML for displaying Quicktime video files
      * 
      * @param File $file
@@ -471,130 +345,44 @@ class Omeka_View_Helper_FileMarkup extends Zend_View_Helper_Abstract
      *  width, height, autoplay, controller, loop
      * @return string
      */ 
-    public function mov($file, array $options=array())
+    public function video($file, array $options=array())
     {
-        $path = html_escape($file->getWebPath('original'));
-        $html = '<object classid="clsid:02BF25D5-8C17-4B23-BC80-D3488ABDDC6B" codebase="http://www.apple.com/qtactivex/qtplugin.cab" width="'.$options['width'].'" height="'.$options['height'].'">'
-              . '<param name="src" value="'.$path.'" />'
-              . '<param name="controller" value="'.($options['controller'] ? 'true' : 'false').'" />'
-              . '<param name="autoplay" value="'.($options['autoplay'] ? 'true' : 'false').'" />'
-              . '<param name="loop" value="'.($options['loop'] ? 'true' : 'false').'" />'
-              . '<param name="scale" value="' . $options['scale'] . '" />'
-              . '<embed src="'.$path.'" scale="' . $options['scale'] . '" width="'.$options['width'].'" height="'.$options['height'].'" controller="'.($options['controller'] ? 'true' : 'false').'" autoplay="'.($options['autoplay'] ? 'true' : 'false').'" pluginspage="http://www.apple.com/quicktime/download/" type="video/quicktime"></embed>'
-              . '</object>';
-        return $html;
+        return $this->_media('video', $file, $options);
     }
     
     /**
-     * Default display of audio files via <object> tags.
+     * Default display of audio files via <audio> tag.
      * 
      * @param File $file
      * @param array $options The set of default options for this includes:
      *  width, height, autoplay, controller, loop
-     * @param string $type The Internet media type of the file
      * @return string
      */
-    private function _audio($file, array $options, $type)
+    public function audio($file, array $options)
     {
-        $path = html_escape($file->getWebPath('original'));
-        $html = '<object classid="clsid:02BF25D5-8C17-4B23-BC80-D3488ABDDC6B" codebase="http://www.apple.com/qtactivex/qtplugin.cab" width="'.$options['width'].'" height="'.$options['height'].'">'
-              . '<param name="src" value="'.$path.'" />'
-              . '<param name="controller" value="'.($options['controller'] ? 'true' : 'false').'" />'
-              . '<param name="autoplay" value="'.($options['autoplay'] ? 'true' : 'false').'" />'
-              . '<param name="loop" value="'.($options['loop'] ? 'true' : 'false').'" />'
-              . '<object type="' . $type . '" data="' . $path . '" width="'.$options['width'].'" height="'.$options['height'].'" autoplay="'.($options['autoplay'] ? 'true' : 'false').'">'
-              . '<param name="src" value="'.$path.'" />'
-              . '<param name="controller" value="'.($options['controller'] ? 'true' : 'false').'" />'
-              . '<param name="autoplay" value="'.($options['autoplay'] ? 'true' : 'false').'" />'
-              . '<param name="autostart" value="'.($options['autoplay'] ? '1' : '0').'" />'
-              . '<param name="loop" value="'.($options['loop'] ? 'true' : 'false').'" />'
-              . '</object>'
-              . '</object>';
+        return $this->_media('audio', $file, $options);
+    }
+
+    protected function _media($type, $file, array $options)
+    {
+        if ($type !== 'audio' && $type !== 'video') {
+            $type = 'video';
+        }
+        $url = $file->getWebPath('original');
+        $escapedUrl = html_escape($url);
+        $attrs = array(
+            'src' => $url,
+            'class' => 'omeka-media',
+            'width' => $options['width'],
+            'height' => $options['height'],
+            'controls' => (bool) $options['controller'],
+            'autoplay' => (bool) $options['autoplay'],
+            'loop'     => (bool) $options['loop'],
+        );
+        $html = '<' . $type . ' ' . tag_attributes($attrs) . '>'
+            . '<a href="' . $escapedUrl . '">' . metadata($file, 'display_title') . '</a>'
+            . '</audio>';
         return $html;
-    }
-    
-    /**
-     * Display OGG audio files.
-     * 
-     * @param File $file
-     * @param array $options
-     * @return string
-     */
-    public function ogg($file, array $options = array())
-    {
-        return $this->_audio($file, $options, 'audio/ogg');
-    }
-    
-    /**
-     * Display MP3/MPEG audio files.
-     * 
-     * @param File $file
-     * @param array $options
-     * @return string
-     */
-    public function mp3($file, array $options = array())
-    {
-        return $this->_audio($file, $options, 'audio/mpeg');
-    }
-    
-    /**
-     * Display AAC audio files.
-     * 
-     * @param File $file
-     * @param array $options
-     * @return string
-     */
-    public function aac($file, array $options = array())
-    {
-        return $this->_audio($file, $options, 'audio/x-aac');
-    }
-    
-    /**
-     * Display AIFF audio files.
-     * 
-     * @param File $file
-     * @param array $options
-     * @return string
-     */
-    public function aiff($file, array $options = array())
-    {
-        return $this->_audio($file, $options, 'audio/x-aiff');
-    }
-    
-    /**
-     * Display MIDI audio files.
-     * 
-     * @param File $file
-     * @param array $options
-     * @return string
-     */
-    public function midi($file, array $options = array())
-    {
-        return $this->_audio($file, $options, 'audio/midi');
-    }
-    
-    /**
-     * Display MP4 audio files.
-     * 
-     * @param File $file
-     * @param array $options
-     * @return string
-     */
-    public function mp4($file, array $options = array())
-    {
-        return $this->_audio($file, $options, 'audio/mp4');
-    }
-    
-    /**
-     * Display WAV audio files.
-     * 
-     * @param File $file
-     * @param array $options
-     * @return string
-     */
-    public function wav($file, array $options = array())
-    {
-        return $this->_audio($file, $options, 'audio/x-wav');
     }
     
     /**
