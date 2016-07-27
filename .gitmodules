@@ -49,12 +49,6 @@
 [submodule "plugins/ExperimentalBeijing"]
 	path = plugins/ExperimentalBeijing
 	url = https://github.com/zploskey/plugin-ExperimentalBeijing.git
-[submodule "plugins/ShortcodeCarousel"]
-	path = plugins/ShortcodeCarousel
-	url = https://github.com/omeka/plugin-ShortcodeCarousel.git
-[submodule "plugins/GuestUser"]
-	path = plugins/GuestUser
-	url = git://github.com/omeka/plugin-GuestUser.git
 [submodule "plugins/HideElements"]
 	path = plugins/HideElements
 	url = https://github.com/zerocrates/HideElements.git
