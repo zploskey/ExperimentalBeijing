@@ -37,9 +37,6 @@
 [submodule "themes/minimalist"]
 	path = themes/minimalist
 	url = https://github.com/omeka/theme-minimalist.git
-[submodule "themes/neatscape"]
-	path = themes/neatscape
-	url = https://github.com/scholarslab/neatscape.git
 [submodule "plugins/DublinCoreExtended"]
 	path = plugins/DublinCoreExtended
 	url = https://github.com/omeka/plugin-DublinCoreExtended.git
