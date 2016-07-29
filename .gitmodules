@@ -48,4 +48,7 @@
 	url = https://github.com/zploskey/plugin-ExperimentalBeijing.git
 [submodule "plugins/HideElements"]
 	path = plugins/HideElements
-	url = https://github.com/zerocrates/HideElements.git
+    url = https://github.com/zerocrates/HideElements.git
+[submodule "plugins/Neatline"]
+	path = plugins/Neatline
+	url = https://github.com/scholarslab/Neatline.git
