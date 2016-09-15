@@ -32,7 +32,10 @@ class Omeka_Filter_HtmlPurifier implements Zend_Filter_Interface
         ),
         // Note: this allows "unsafe" elements/attributes, but only when they
         // are also in the Allowed lists configured by the user.
-        'HTML.Trusted' => true
+        'HTML.Trusted' => true,
+        // Experimental Beijing additions
+        'HTML.SafeIframe' => true,
+        'URI.SafeIframeRegexp' => '%^(https?:)//archive\.org/embed|^(https?:)//(www.)?criticalcommons.org%'
     );
 
     /**
