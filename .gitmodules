@@ -58,3 +58,6 @@
 [submodule "plugins/NeatlineWaypoints"]
 	path = plugins/NeatlineWaypoints
 	url = https://github.com/scholarslab/nl-widget-Waypoints.git
+[submodule "plugins/ElementLinks"]
+	path = plugins/ElementLinks
+	url = https://github.com/zploskey/plugin-ElementLinks.git
