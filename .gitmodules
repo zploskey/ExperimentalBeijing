@@ -21,7 +21,8 @@
 	url = https://github.com/omeka/plugin-Dropbox.git
 [submodule "plugins/Multilanguage"]
 	path = plugins/Multilanguage
-	url = https://github.com/patrickmj/Multilanguage.git
+	url = https://github.com/zploskey/Multilanguage.git
+	branch = master
 [submodule "plugins/CsvImport"]
 	path = plugins/CsvImport
 	url = https://github.com/omeka/plugin-CsvImport.git
@@ -43,9 +44,11 @@
 [submodule "themes/experimental-beijing"]
 	path = themes/experimental-beijing
 	url = https://github.com/zploskey/omeka-theme-experimental-beijing.git
+	branch = master
 [submodule "plugins/ExperimentalBeijing"]
 	path = plugins/ExperimentalBeijing
 	url = https://github.com/zploskey/plugin-ExperimentalBeijing.git
+	branch = master
 [submodule "plugins/HideElements"]
 	path = plugins/HideElements
     url = https://github.com/zerocrates/HideElements.git
@@ -61,3 +64,4 @@
 [submodule "plugins/ElementLinks"]
 	path = plugins/ElementLinks
 	url = https://github.com/zploskey/plugin-ElementLinks.git
+	branch = master
