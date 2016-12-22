@@ -10,7 +10,7 @@
 /application/tests/config.ini
 
 # Log files
-/application/logs/errors.log
+/application/logs/errors.log*
 /application/logs/processes.log
 /application/tests/log.xml
 
