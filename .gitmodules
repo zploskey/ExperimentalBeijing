@@ -23,6 +23,7 @@
 	path = plugins/Multilanguage
 	url = https://github.com/zploskey/Multilanguage.git
 	branch = master
+	update = merge
 [submodule "plugins/CsvImport"]
 	path = plugins/CsvImport
 	url = https://github.com/omeka/plugin-CsvImport.git
@@ -45,10 +46,12 @@
 	path = themes/experimental-beijing
 	url = https://github.com/zploskey/omeka-theme-experimental-beijing.git
 	branch = master
+	update = merge
 [submodule "plugins/ExperimentalBeijing"]
 	path = plugins/ExperimentalBeijing
 	url = https://github.com/zploskey/plugin-ExperimentalBeijing.git
 	branch = master
+	update = merge
 [submodule "plugins/HideElements"]
 	path = plugins/HideElements
     url = https://github.com/zerocrates/HideElements.git
@@ -65,3 +68,4 @@
 	path = plugins/ElementLinks
 	url = https://github.com/zploskey/plugin-ElementLinks.git
 	branch = master
+	update = merge
