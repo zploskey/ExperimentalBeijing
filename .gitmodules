@@ -69,3 +69,6 @@
 	url = https://github.com/zploskey/plugin-ElementLinks.git
 	branch = master
 	update = merge
+[submodule "plugins/DerivativeImages"]
+	path = plugins/DerivativeImages
+	url = https://github.com/omeka/plugin-DerivativeImages.git
