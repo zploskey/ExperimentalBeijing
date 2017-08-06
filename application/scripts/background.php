@@ -30,10 +30,14 @@ try {
 
 // Load a core set of resources.
 $application = new Omeka_Application(APPLICATION_ENV);
+$application->initialize();
+/** Original code from Omeka... Results in the following fatal error:
+ *  Uncaught Zend_Session_Exception: Unable to set session handler in
+ *  application/libraries/Zend/Session.php:283
 $application->bootstrap(array(
     'Config', 'Logger', 'Db', 'Options', 'Pluginbroker', 'View', 'Locale', 'Mail',
     'Plugins', 'Jobs', 'Storage', 'Filederivatives'
-));
+));*/
 
 // Get the database object.
 $db = get_db();
