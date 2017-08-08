@@ -75,4 +75,4 @@
 	url = https://github.com/UCSCLibrary/AdminImages.git
 [submodule "plugins/ShortcodeCarousel"]
 	path = plugins/ShortcodeCarousel
-	url = https://github.com/omeka/plugin-ShortcodeCarousel.git
+	url = https://github.com/zploskey/plugin-ShortcodeCarousel.git
