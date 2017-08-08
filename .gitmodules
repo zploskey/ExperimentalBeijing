@@ -70,3 +70,9 @@
 [submodule "plugins/DerivativeImages"]
 	path = plugins/DerivativeImages
 	url = https://github.com/omeka/plugin-DerivativeImages.git
+[submodule "plugins/AdminImages"]
+	path = plugins/AdminImages
+	url = https://github.com/UCSCLibrary/AdminImages.git
+[submodule "plugins/ShortcodeCarousel"]
+	path = plugins/ShortcodeCarousel
+	url = https://github.com/omeka/plugin-ShortcodeCarousel.git
