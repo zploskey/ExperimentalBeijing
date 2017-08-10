@@ -31,51 +31,59 @@ class Omeka_View_Helper_ItemSearchFilters extends Zend_View_Helper_Abstract
         
         $db = get_db();
         $displayArray = array();
-        foreach ($requestArray as $key => $value) {
-            if($value != null) {
-                $filter = ucfirst($key);
-                $displayValue = null;
-                switch ($key) {
-                    case 'type':
-                        $filter = 'Item Type';
-                        $itemType = $db->getTable('ItemType')->find($value);
-                        if ($itemType) {
-                            $displayValue = $itemType->name;
-                        }
-                        break;
-                    
-                    case 'collection':
-                        if ($value === '0') {
-                            $displayValue = __('No Collection');
-                            break;
-                        }
-
-                        $collection = $db->getTable('Collection')->find($value);
-                        if ($collection) {
-                            $displayValue = metadata($collection, 'display_title', array('no_escape' => true));
-                        }
-                        break;
-
-                    case 'user':
-                        $user = $db->getTable('User')->find($value);
-                        if ($user) {
-                            $displayValue = $user->name;
-                        }
-                        break;
-
-                    case 'public':
-                    case 'featured':
-                        $displayValue = ($value == 1 ? __('Yes') : $displayValue = __('No'));
-                        break;
-                        
-                    case 'search':
-                    case 'tags':
-                    case 'range':
-                        $displayValue = $value;
-                        break;
+        foreach ($requestArray as $key => $values) {
+            if ($values != null) {
+                if (! is_array($values)) {
+                    $values = array($values);
                 }
-                if ($displayValue) {
-                    $displayArray[$filter] = $displayValue;
+                foreach ($values as $value) {
+                    $filter = ucfirst($key);
+                    $displayValue = null;
+                    switch ($key) {
+                        case 'type':
+                            $filter = 'Item Type';
+                            $itemType = $db->getTable('ItemType')->find($value);
+                            if ($itemType) {
+                                $displayValue = $itemType->name;
+                            }
+                            break;
+
+                        case 'collection':
+                            if ($value === '0') {
+                                $displayValue = __('No Collection');
+                                break;
+                            }
+
+                            $collection = $db->getTable('Collection')->find($value);
+                            if ($collection) {
+                                $displayValue = metadata($collection, 'display_title', array('no_escape' => true));
+                            }
+                            break;
+
+                        case 'user':
+                            $user = $db->getTable('User')->find($value);
+                            if ($user) {
+                                $displayValue = $user->name;
+                            }
+                            break;
+
+                        case 'public':
+                        case 'featured':
+                            $displayValue = ($value == 1 ? __('Yes') : $displayValue = __('No'));
+                            break;
+
+                        case 'search':
+                        case 'tags':
+                        case 'range':
+                            $displayValue = $value;
+                            break;
+                    }
+                    if ($displayValue) {
+                        if (empty($displayArray[$filter])) {
+                            $displayArray[$filter] = array();
+                        }
+                        $displayArray[$filter][] = $displayValue;
+                    }
                 }
             }
         }
@@ -85,7 +93,7 @@ class Omeka_View_Helper_ItemSearchFilters extends Zend_View_Helper_Abstract
         // Advanced needs a separate array from $displayValue because it's
         // possible for "Specific Fields" to have multiple values due to 
         // the ability to add fields.
-        if(array_key_exists('advanced', $requestArray)) {
+        if (array_key_exists('advanced', $requestArray)) {
             $advancedArray = array();
             $index = 0;
             foreach ($requestArray['advanced'] as $i => $row) {
@@ -118,9 +126,13 @@ class Omeka_View_Helper_ItemSearchFilters extends Zend_View_Helper_Abstract
             $html .= '<ul>';
             foreach($displayArray as $name => $query) {
                 $class = html_escape(strtolower(str_replace(' ', '-', $name)));
-                $html .= '<li class="' . $class . '">' . html_escape(__($name)) . ': ' . html_escape($query) . '</li>';
+                foreach ($query as $q) {
+                    $html .= '<li class="' . $class . '">' . html_escape(__($name)) . ': ';
+                    $html .= html_escape(__($q));
+                    $html .= '</li>';
+                }
             }
-            if(!empty($advancedArray)) {
+            if (!empty($advancedArray)) {
                 foreach($advancedArray as $j => $advanced) {
                     $html .= '<li class="advanced">' . html_escape($advanced) . '</li>';
                 }
