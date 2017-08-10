@@ -32,7 +32,7 @@ class CollectionsController extends Omeka_Controller_AbstractActionController
             $this->_setParam('sort_field', 'added');
             $this->_setParam('sort_dir', 'd');
         }
-        
+
         parent::browseAction();
     }
     
@@ -44,7 +44,7 @@ class CollectionsController extends Omeka_Controller_AbstractActionController
     {
         parent::showAction();
         $this->view->items = $this->_helper->db->getTable('Item')->findBy(
-            array('collection' => $this->view->collection->id), $this->_getBrowseRecordsPerPage());
+            array('collection' => $this->view->collection->id));
     }
     
     /**
