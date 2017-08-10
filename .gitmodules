@@ -3,7 +3,7 @@
 	url = https://github.com/omeka/plugin-ExhibitBuilder.git
 [submodule "plugins/SimplePages"]
 	path = plugins/SimplePages
-	url = https://github.com/omeka/plugin-SimplePages.git
+	url = https://github.com/zploskey/plugin-SimplePages.git
 [submodule "themes/default"]
 	path = themes/default
 	url = https://github.com/omeka/theme-thanksroy.git
