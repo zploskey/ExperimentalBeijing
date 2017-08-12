@@ -57,7 +57,7 @@
     </target>
 
     <target name="test-plugins" description="Run automated tests for plugins.">
-        <apply executable="phpunit" failonerror="true">
+        <apply executable="vendor/bin/phpunit" failonerror="true">
             <arg value="-c" />
             <fileset dir="plugins" includes="*/tests/phpunit.xml" />
         </apply>
