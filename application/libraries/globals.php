@@ -2761,6 +2761,7 @@ function public_nav_main()
     $nav = new Omeka_Navigation;
     $nav->loadAsOption(Omeka_Navigation::PUBLIC_NAVIGATION_MAIN_OPTION_NAME);
     $nav->addPagesFromFilter(Omeka_Navigation::PUBLIC_NAVIGATION_MAIN_FILTER_NAME);
+    apply_filters('public_navigation_main_all', $nav->getPages());
     return $view->navigation()->menu($nav);
 }
 
