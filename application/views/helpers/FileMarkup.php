@@ -446,7 +446,8 @@ class Omeka_View_Helper_FileMarkup extends Zend_View_Helper_Abstract
             null => 'thumb',
             'thumbnail'=>'thumb', 
             'square_thumbnail'=>'thumb', 
-            'fullsize'=>'full');
+            'fullsize'=>'full',
+            'original'=>'original');
         $imageSize = $options['imageSize'];
         
         // If we can make an image from the given image size.
