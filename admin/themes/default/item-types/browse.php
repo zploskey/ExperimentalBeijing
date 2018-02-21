@@ -20,6 +20,18 @@ echo flash();
     <?php echo $withoutTypeMessage; ?>
 </p>
 
+<?php echo pagination_links(); ?>
+
+<p class="without-item-type">
+    <?php if ($totalItemsWithoutType):
+        $withoutTypeMessage = __(plural('%s%d item%s has no type.', "%s%d items%s have no type.", $totalItemsWithoutType),
+            '<a href="' . html_escape(url('items/browse?type=0')) . '">', $totalItemsWithoutType, '</a>');
+    else:
+        $withoutTypeMessage = __('All items have a type.');
+    endif; ?>
+    <?php echo $withoutTypeMessage; ?>
+</p>
+
 <table>
     <thead>
         <tr>
@@ -52,6 +64,10 @@ echo flash();
     <?php echo link_to('item-types', 'add', __('Add an Item Type'), array('class'=>'add green button')); ?>
     <?php endif ?>
 </div>
+<p class="without-item-type"><?php echo $withoutTypeMessage; ?></p>
+
+<?php echo pagination_links(); ?>
+
 <p class="without-item-type"><?php echo $withoutTypeMessage; ?></p>
 
 <?php fire_plugin_hook('admin_item_types_browse', array('item_types' => $this->item_types, 'view' => $this)); ?>

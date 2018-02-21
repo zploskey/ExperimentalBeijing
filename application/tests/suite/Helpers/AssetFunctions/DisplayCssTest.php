@@ -12,7 +12,7 @@
  */
 class Omeka_Helper_DisplayCssTest extends PHPUnit_Framework_TestCase
 {
-    const ASSET_PATH_ROOT = 'http://omeka-test/asset-path';
+    const ASSET_PATH_ROOT = '/omeka-test/asset-path';
 
     public function setUp()
     {
@@ -29,7 +29,8 @@ class Omeka_Helper_DisplayCssTest extends PHPUnit_Framework_TestCase
         Zend_Registry::_unsetInstance();
     }
 
-    private function _getCssOutput() {
+    private function _getCssOutput()
+    {
         ob_start();
         echo head_css();
         return ob_get_clean();
@@ -46,7 +47,8 @@ class Omeka_Helper_DisplayCssTest extends PHPUnit_Framework_TestCase
         $this->assertCount(1, $result, "Link tag for '$path' not found.");
     }
 
-    private function _assertStylesheets($output, $cssPaths) {
+    private function _assertStylesheets($output, $cssPaths)
+    {
         foreach ($cssPaths as $path) {
             $this->_assertStyleLink($output, $path);
         }
@@ -55,12 +57,34 @@ class Omeka_Helper_DisplayCssTest extends PHPUnit_Framework_TestCase
     public function testWithNoStyles()
     {
         $this->assertEquals('', $this->_getCssOutput());
-
     }
 
-    public function testQueueCssSingle()
+    public function testQueueCssSingleWithDefaultVersion()
     {
         queue_css_file('style');
+
+        $styles = array(
+            self::ASSET_PATH_ROOT . '/css/style.css?v='.OMEKA_VERSION
+        );
+
+        $this->_assertStylesheets($this->_getCssOutput(), $styles);
+    }
+
+    public function testQueueCssSingleWithSpecificVersion()
+    {
+        $version = '1.2x';
+        queue_css_file('style', 'all', false, 'css', $version);
+
+        $styles = array(
+            self::ASSET_PATH_ROOT . '/css/style.css?v='.$version
+        );
+
+        $this->_assertStylesheets($this->_getCssOutput(), $styles);
+    }
+
+    public function testQueueCssSingleWithNoVersion()
+    {
+        queue_css_file('style', 'all', false, 'css', null);
 
         $styles = array(
             self::ASSET_PATH_ROOT . '/css/style.css'
@@ -69,9 +93,21 @@ class Omeka_Helper_DisplayCssTest extends PHPUnit_Framework_TestCase
         $this->_assertStylesheets($this->_getCssOutput(), $styles);
     }
 
-    public function testQueueCssArray()
+    public function testQueueCssArrayWithDefaultVersion()
     {
         queue_css_file(array('style', 'jquery-ui'));
+
+        $styles = array(
+            self::ASSET_PATH_ROOT . '/css/style.css?v='.OMEKA_VERSION,
+            self::ASSET_PATH_ROOT . '/css/jquery-ui.css?v='.OMEKA_VERSION
+        );
+
+        $this->_assertStylesheets($this->_getCssOutput(), $styles);
+    }
+
+    public function testQueueCssArrayWithNoVersion()
+    {
+        queue_css_file(array('style', 'jquery-ui'), 'all', false, 'css', null);
 
         $styles = array(
             self::ASSET_PATH_ROOT . '/css/style.css',
@@ -81,9 +117,18 @@ class Omeka_Helper_DisplayCssTest extends PHPUnit_Framework_TestCase
         $this->_assertStylesheets($this->_getCssOutput(), $styles);
     }
 
-    public function testQueueCssWithMedia()
+    public function testQueueCssWithMediaAndDefaultVersion()
     {
         queue_css_file('style', 'screen');
+
+        $path = self::ASSET_PATH_ROOT . '/css/style.css?v='.OMEKA_VERSION;
+
+        $this->_assertStyleLink($this->_getCssOutput(), $path, 'screen');
+    }
+
+    public function testQueueCssWithMediaAndNoVersion()
+    {
+        queue_css_file('style', 'screen', false, 'css', null);
 
         $path = self::ASSET_PATH_ROOT . '/css/style.css';
 

@@ -23,12 +23,12 @@ class Omeka_View_Helper_ItemSearchFilters extends Zend_View_Helper_Abstract
     public function itemSearchFilters(array $params = null)
     {
         if ($params === null) {
-            $request = Zend_Controller_Front::getInstance()->getRequest(); 
+            $request = Zend_Controller_Front::getInstance()->getRequest();
             $requestArray = $request->getParams();
         } else {
             $requestArray = $params;
         }
-        
+
         $db = get_db();
         $displayArray = array();
         foreach ($requestArray as $key => $values) {
@@ -89,9 +89,9 @@ class Omeka_View_Helper_ItemSearchFilters extends Zend_View_Helper_Abstract
         }
 
         $displayArray = apply_filters('item_search_filters', $displayArray, array('request_array' => $requestArray));
-        
+
         // Advanced needs a separate array from $displayValue because it's
-        // possible for "Specific Fields" to have multiple values due to 
+        // possible for "Specific Fields" to have multiple values due to
         // the ability to add fields.
         if (array_key_exists('advanced', $requestArray)) {
             $advancedArray = array();
@@ -110,7 +110,7 @@ class Omeka_View_Helper_ItemSearchFilters extends Zend_View_Helper_Abstract
                 }
 
                 if ($index) {
-                    if(isset($row['joiner']) && $row['joiner'] === 'or') {
+                    if (isset($row['joiner']) && $row['joiner'] === 'or') {
                         $advancedValue = __('OR') . ' ' . $advancedValue;
                     } else {
                         $advancedValue = __('AND') . ' ' . $advancedValue;
@@ -124,7 +124,7 @@ class Omeka_View_Helper_ItemSearchFilters extends Zend_View_Helper_Abstract
         if (!empty($displayArray) || !empty($advancedArray)) {
             $html .= '<div id="item-filters">';
             $html .= '<ul>';
-            foreach($displayArray as $name => $query) {
+            foreach ($displayArray as $name => $query) {
                 $class = html_escape(strtolower(str_replace(' ', '-', $name)));
                 foreach ($query as $q) {
                     $html .= '<li class="' . $class . '">' . html_escape(__($name)) . ': ';
@@ -133,7 +133,7 @@ class Omeka_View_Helper_ItemSearchFilters extends Zend_View_Helper_Abstract
                 }
             }
             if (!empty($advancedArray)) {
-                foreach($advancedArray as $j => $advanced) {
+                foreach ($advancedArray as $j => $advanced) {
                     $html .= '<li class="advanced">' . html_escape($advanced) . '</li>';
                 }
             }
