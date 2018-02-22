@@ -10,7 +10,7 @@
  * @copyright Roy Rosenzweig Center for History and New Media, 2007-2010
  */
 class Omeka_CaptchaTest extends PHPUnit_Framework_TestCase
-{   
+{
     public function setUp()
     {
         $this->bootstrap = new Omeka_Test_Bootstrap;
@@ -36,18 +36,16 @@ class Omeka_CaptchaTest extends PHPUnit_Framework_TestCase
         $this->assertTrue(Omeka_Captcha::isConfigured());
     }
 
-    public function testGetCaptcha()
+    public function testGetCaptchaVersion2()
     {
-        $this->assertNull(Omeka_Captcha::getCaptcha());
-
         $options = array(
             Omeka_Captcha::PUBLIC_KEY_OPTION => 'public_key',
-            Omeka_Captcha::PRIVATE_KEY_OPTION => 'private_key'
+            Omeka_Captcha::PRIVATE_KEY_OPTION => 'private_key',
             );
         $this->bootstrap->getContainer()->options = $options;
 
         $captcha = Omeka_Captcha::getCaptcha();
         $this->assertNotNull($captcha);
-        $this->assertInstanceOf('Zend_Captcha_Adapter', $captcha);
+        $this->assertInstanceOf('Ghost_Captcha_ReCaptcha2', $captcha);
     }
 }

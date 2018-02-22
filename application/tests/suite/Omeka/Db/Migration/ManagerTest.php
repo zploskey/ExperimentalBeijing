@@ -16,7 +16,7 @@ class Omeka_Db_Migration_ManagerTest extends PHPUnit_Framework_TestCase
     const FUTURE_MIGRATION = '50000101120000';
     const ALREADY_RUN_MIGRATION = '20080717013526';
     const TARGET_MIGRATION = '20100401120000';
-    
+
     public function setUp()
     {
         $this->db = $this->getMock('Omeka_Db', array('fetchCol', 'getAdapter', 'query'), array(), '', false);
@@ -35,7 +35,7 @@ class Omeka_Db_Migration_ManagerTest extends PHPUnit_Framework_TestCase
     {
         Zend_Registry::_unsetInstance();
     }
-    
+
     public function testMigratingToCurrentTime()
     {
         $this->db->expects($this->any())
