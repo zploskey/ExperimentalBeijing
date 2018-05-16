@@ -6,7 +6,7 @@ $pageTitle = __('Browse Tags');
 $pageTitle .= ' ' . __('(%s total)', $total_results);
 
 if ($canEdit) {
-    queue_js_file(array('vendor/jquery.jeditable', 'tags'));
+    queue_js_file(array('tags', 'vendor/jquery-editable-poshytip.min'));
 }
 
 echo head(array('title'=>$pageTitle,'bodyclass'=>'tags browse-tags'));
@@ -86,14 +86,14 @@ echo flash();
         <?php foreach ($tags as $tag): ?>
             <li>
             <?php if($browse_for == 'Item'):?>
-                <a href="<?php echo url('items/?tag=' . $tag->name); ?>" class="count"><?php echo $tag['tagCount']; ?></a>
+                <a href="<?php echo html_escape(url('items/browse', array('tags' => $tag->name))); ?>" class="count"><?php echo $tag['tagCount']; ?></a>
             <?php else: ?>
                 <span class="count"><?php echo $tag['tagCount']; ?></span>
             <?php endif; ?>
             <?php if ($canEdit): ?>
-                <span class="tag edit-tag" id="<?php echo $tag->id; ?>"><?php echo $tag->name; ?></span>
+                <span class="tag edit-tag" data-pk="<?php echo $tag->id; ?>"><?php echo html_escape($tag->name); ?></span>
             <?php else: ?>
-                <span class="tag"><?php echo $tag->name; ?></span>
+                <span class="tag"><?php echo html_escape($tag->name); ?></span>
             <?php endif; ?>
             <?php if ($canDelete): ?>
                 <span class="delete-tag"><?php echo link_to($tag, 'delete-confirm', 'delete', array('class' => 'delete-confirm')); ?></span>
@@ -112,7 +112,7 @@ echo flash();
 <script type="text/javascript">
 jQuery(document).ready(function () {
     var editableURL = '<?php echo url('tags/rename-ajax'); ?>';
-    var tagURLBase = '<?php echo url('items/?tag='); ?>';
+    var tagURLBase = '<?php echo url('items/browse?tags='); ?>';
     var csrfToken = <?php echo js_escape($csrfToken); ?>;
     Omeka.Tags.enableEditInPlace(editableURL, tagURLBase, csrfToken);
 });
